@@ -4,10 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
 import { TranslateModule } from '@ngx-translate/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, TranslateModule.forRoot()],
+  imports: [BrowserModule, TranslateModule.forRoot(), BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
