@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "dist/poke-kanBan-clickUp-Project",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
 }
