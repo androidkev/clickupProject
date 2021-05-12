@@ -32,14 +32,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
+        uses: actions/checkout@main
       - name: Download Artifact
-        uses: actions/download-artifact@master
+        uses: actions/download-artifact@main
         with:
           name: dist
           path: dist
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
+        uses: w9jds/firebase-action@main
         with:
           args: deploy --only hosting
         env:
