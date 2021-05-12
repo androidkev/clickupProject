@@ -14,12 +14,11 @@ jobs:
       - name: Install Dependencies
         run:  |
           npm install
-      -name: npm run format
-        run: npm run format:check && npm run format:list && npm run format:write
-      -name: npm run fix
-        run: npm run fix
-      -name: npm run lint
-        run: npm run lint
+          npm run format:check
+          npm run format:list
+          npm run format:write
+          npm run fix
+          npm run lint
       - name: Build
         run: npm run build-prod
       - name: Archive Production Artifact
