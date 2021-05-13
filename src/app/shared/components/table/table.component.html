@@ -4,37 +4,26 @@
   <div
     cdkDropList
     #todoList="cdkDropList"
-    cdkDropListOrientation="horizontal"
     [cdkDropListData]="todo"
     [cdkDropListConnectedTo]="[doneList]"
     class="example-list"
     (cdkDropListDropped)="drop($event)"
   >
-    <div class="example-box card" *ngFor="let item of todo" cdkDrag>
-      <header class="card-header">
-        <p>Sep 11th 2020</p>
-        <h2>{{ item }}</h2>
-      </header>
-    </div>
+    <div class="example-box" *ngFor="let item of todo" cdkDrag>{{ item }}</div>
   </div>
 </div>
 
 <div class="example-container">
   <h2>Done</h2>
+
   <div
     cdkDropList
     #doneList="cdkDropList"
-    cdkDropListOrientation="horizontal"
     [cdkDropListData]="done"
     [cdkDropListConnectedTo]="[todoList]"
     class="example-list"
     (cdkDropListDropped)="drop($event)"
   >
-    <div class="example-box card" *ngFor="let item of done" cdkDrag>
-      <header class="card-header">
-        <p>Sep 11th 2020</p>
-        <h2>{{ item }}</h2>
-      </header>
-    </div>
+    <div class="example-box" *ngFor="let item of done" cdkDrag>{{ item }}</div>
   </div>
 </div>
