@@ -19,6 +19,7 @@ jobs:
           npm run format:write
           npm run fix
           npm run lint
+          npm run test
       - name: Build
         run: npm run build
       - name: Deploy to Firebase
