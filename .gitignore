@@ -32,7 +32,6 @@ speed-measure-plugin*.json
 .history/*
 
 # Env
-/src/environments
 
 # misc
 /.sass-cache
