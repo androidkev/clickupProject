@@ -1,19 +1,38 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import { Action, createReducer, on, select } from '@ngrx/store';
 import * as Actions from './actions';
+import { Resource, Content } from '../../core/constants/constants';
+import { setSelectedResourceContent } from './actions';
 
 export interface State {
-  pokemon: string;
+  resourceLoader: boolean;
+  resource: Resource[];
+  selectedResource?: Resource;
+  selectedResourceContent?: Content;
 }
 
 export const initialState: State = {
-  pokemon: '',
+  resourceLoader: false,
+  resource: [],
 };
 
-const PokemonReducer = createReducer(
+export const PokemonReducer = createReducer(
   initialState,
-  on(Actions.firstAction, (state, { action }) => ({
+  on(Actions.getResource, (state) => ({
     ...state,
-    pokemon: action,
+    resource: [{ resourceName: 'Loading', url: 'N/A' }],
+  })),
+  on(Actions.setResource, (state, { action }) => ({
+    ...state,
+    resourceLoader: false,
+    resource: [...action],
+  })),
+  on(Actions.setSelectedResource, (state, { resource }) => ({
+    ...state,
+    selectedResource: resource,
+  })),
+  on(Actions.setSelectedResourceContent, (state, { content }) => ({
+    ...state,
+    setSelectedResourceContent: content,
   }))
 );
 
