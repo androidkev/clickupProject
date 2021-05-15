@@ -1,7 +1,16 @@
-<div class="example-container">
-  <h2>Category</h2>
-
-  <div class="example-list">
-    <div class="example-box" (click)="click(item)" *ngFor="let item of list">{{ item.resourceName }}</div>
+<div class="container" cdkDrag>
+  <div class="search-container" cdkDragHandle>
+    <input
+      type="text"
+      class="form-control search-field"
+      [(ngModel)]="search"
+      placeholder="Search"
+      [style.width.px]="width"
+      [style.height.px]="height"
+      [style.transform]="'translate3d(' + left + 'px,' + top + 'px,' + '0px)'"
+    />
+  </div>
+  <div class="list">
+    <div class="box" (click)="click(item)" *ngFor="let item of list | search: search">{{ item.name | titlecase }}</div>
   </div>
 </div>

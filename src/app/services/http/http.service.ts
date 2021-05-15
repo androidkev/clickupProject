@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Resource } from '../../core/constants/constants';
+import { Resource, Results } from '../../core/constants/constants';
 
 @Injectable({
   providedIn: 'root',
@@ -14,5 +14,9 @@ export class HttpService {
 
   getSelectedResource(resource: Resource) {
     return this.http.get(resource.url);
+  }
+
+  getResults(results: Results) {
+    return this.http.get(results.url);
   }
 }

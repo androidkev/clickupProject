@@ -7,6 +7,7 @@ import * as fromState from '../state/selectors';
 @Injectable()
 export class ObservableStore {
   resource$: Observable<any>;
+  resourceContent$: Observable<any>;
 
   constructor(private store: Store) {
     this.setSelectors();
@@ -14,5 +15,6 @@ export class ObservableStore {
 
   setSelectors() {
     this.resource$ = this.store.select(fromState.selectResource);
+    this.resourceContent$ = this.store.select(fromState.selectSelectedResource);
   }
 }

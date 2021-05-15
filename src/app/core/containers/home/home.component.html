@@ -1,1 +1,10 @@
-<app-table [resource]="resourceList" (selectedResource)="selectResource($event)"></app-table>
+<div>
+  <app-table
+    [resource]="resourceList"
+    (selectedResource)="selectResource($event)"
+    [width]="300"
+    [height]="150"
+    [left]="100"
+    [top]="100"
+  ></app-table>
+</div>

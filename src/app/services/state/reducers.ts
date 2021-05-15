@@ -1,25 +1,29 @@
 import { Action, createReducer, on, select } from '@ngrx/store';
 import * as Actions from './actions';
-import { Resource, Content } from '../../core/constants/constants';
+import { Resource, Content, Table } from '../../core/constants/constants';
 import { setSelectedResourceContent } from './actions';
 
 export interface State {
   resourceLoader: boolean;
   resource: Resource[];
+  tables: Table[];
   selectedResource?: Resource;
   selectedResourceContent?: Content;
+  resultsData: any;
 }
 
 export const initialState: State = {
   resourceLoader: false,
+  tables: [],
   resource: [],
+  resultsData: [],
 };
 
 export const PokemonReducer = createReducer(
   initialState,
   on(Actions.getResource, (state) => ({
     ...state,
-    resource: [{ resourceName: 'Loading', url: 'N/A' }],
+    resource: [{ name: 'Loading', url: 'N/A' }],
   })),
   on(Actions.setResource, (state, { action }) => ({
     ...state,
@@ -29,10 +33,15 @@ export const PokemonReducer = createReducer(
   on(Actions.setSelectedResource, (state, { resource }) => ({
     ...state,
     selectedResource: resource,
+    resultsData: [],
   })),
   on(Actions.setSelectedResourceContent, (state, { content }) => ({
     ...state,
-    setSelectedResourceContent: content,
+    selectedResourceContent: content,
+  })),
+  on(Actions.setResultsData, (state, { data }) => ({
+    ...state,
+    resultsData: [...state.resultsData, data],
   }))
 );
 

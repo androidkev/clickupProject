@@ -9,36 +9,31 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem, copyArrayItem } from '@angular/cdk/drag-drop';
-import { Resource } from '../../../core/constants/constants';
+import { Resource, Content } from '../../../core/constants/constants';
 
 @Component({
   selector: 'app-table',
-  templateUrl: 'table.component.html',
-  styleUrls: ['table.component.scss'],
+  templateUrl: 'resource-table.component.html',
+  styleUrls: ['resource-table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableComponent implements OnInit, OnChanges {
-  @Input() public width: number;
-  @Input() public height: number;
-  @Input() public left: number;
-  @Input() public top: number;
-  @Input() resource: Resource[] = [];
+  @Input() resourceContent: Content[] = [];
 
   @Output() selectedResource = new EventEmitter<string>();
 
-  public list: Resource[] = [];
-  public search = '';
+  list: Content[] = [];
 
   transfer = [];
 
   constructor() {}
 
   ngOnInit() {
-    this.list = [...this.resource];
+    this.list = [...this.resourceContent];
   }
 
-  ngOnChanges() {
-    this.list = [...this.resource];
+  ngOnChanges(changes: SimpleChanges) {
+    this.list = [...this.resourceContent];
   }
 
   click(item: string) {
