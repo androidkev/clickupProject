@@ -1,6 +1,6 @@
-import { Action, createReducer, on, select } from '@ngrx/store';
+import { Action, ActionReducerMap, createReducer, on, ReducerManager, select } from '@ngrx/store';
 import * as Actions from './actions';
-import { Resource, Content, Table } from '../../core/constants/constants';
+import { Resource, Content, Table, StoreRootState } from '../../core/constants/constants';
 import { setSelectedResourceContent } from './actions';
 
 export interface State {
@@ -44,6 +44,10 @@ export const PokemonReducer = createReducer(
     resultsData: [...state.resultsData, data],
   }))
 );
+
+export const reducers: ActionReducerMap<StoreRootState> = {
+  state: reducer,
+};
 
 export function reducer(state: State | undefined, action: Action) {
   return PokemonReducer(state, action);

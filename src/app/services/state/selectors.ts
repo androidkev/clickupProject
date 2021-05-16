@@ -1,9 +1,5 @@
 import { createSelector } from '@ngrx/store';
-import * as Reducer from './reducers';
-
-export interface StoreRootState {
-  state: Reducer.State;
-}
+import { StoreRootState } from '../../core/constants/constants';
 
 const selectState = (state: StoreRootState) => state;
 
