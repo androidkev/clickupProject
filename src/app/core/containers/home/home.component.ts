@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import * as Actions from './../../../services/state/actions';
 import { ObservableStore } from '../../../services/observable-store/observable-store.service';
 import { Subscription } from 'rxjs';
-import { Resource, Content } from '../../constants/constants';
+import { Resource, StoreRootState } from '../../constants/constants';
 import { ActionDispatcherService } from '../../../services/action-dispatcher/action-dispatcher.service';
 
 @Component({
@@ -18,7 +18,11 @@ export class HomeComponent implements OnInit {
 
   resourceList = [];
 
-  constructor(private store: Store, private observables: ObservableStore, private actions: ActionDispatcherService) {}
+  constructor(
+    private store: Store<StoreRootState>,
+    private observables: ObservableStore,
+    private actions: ActionDispatcherService
+  ) {}
 
   ngOnInit() {
     this.subscriptions = new Subscription();

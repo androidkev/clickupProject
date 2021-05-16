@@ -23,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     ContainersModule,
     EffectsModule.forRoot([PokemonEffects]),
-    StoreModule.forRoot({ state: fromReducer.reducer }),
+    StoreModule.forRoot(fromReducer.reducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
     }),

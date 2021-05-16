@@ -28,6 +28,7 @@ export class TableComponent implements OnInit, OnChanges {
 
   public list: Resource[] = [];
   public search = '';
+  public toogle = false;
 
   transfer = [];
 
