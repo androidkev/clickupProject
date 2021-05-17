@@ -102,43 +102,21 @@ export interface GenerationIii {
   'ruby-sapphire': RubySapphire;
 }
 
-export interface DiamondPearl {
-  back_default: string;
-  back_female?: any;
-  back_shiny: string;
-  back_shiny_female?: any;
+export interface GameVersion {
+  back_default?: string;
+  back_female?: string;
+  back_shiny?: string;
+  back_shiny_female?: string;
   front_default: string;
-  front_female?: any;
+  front_female?: string;
   front_shiny: string;
-  front_shiny_female?: any;
-}
-
-export interface HeartgoldSoulsilver {
-  back_default: string;
-  back_female?: any;
-  back_shiny: string;
-  back_shiny_female?: any;
-  front_default: string;
-  front_female?: any;
-  front_shiny: string;
-  front_shiny_female?: any;
-}
-
-export interface Platinum {
-  back_default: string;
-  back_female?: any;
-  back_shiny: string;
-  back_shiny_female?: any;
-  front_default: string;
-  front_female?: any;
-  front_shiny: string;
-  front_shiny_female?: any;
+  front_shiny_female?: string;
 }
 
 export interface GenerationIv {
-  'diamond-pearl': DiamondPearl;
-  'heartgold-soulsilver': HeartgoldSoulsilver;
-  platinum: Platinum;
+  'diamond-pearl': GameVersion;
+  'heartgold-soulsilver': GameVersion;
+  platinum: GameVersion;
 }
 
 export interface Animated {
@@ -152,40 +130,13 @@ export interface Animated {
   front_shiny_female?: any;
 }
 
-export interface BlackWhite {
-  animated: Animated;
-  back_default: string;
-  back_female?: any;
-  back_shiny: string;
-  back_shiny_female?: any;
-  front_default: string;
-  front_female?: any;
-  front_shiny: string;
-  z;
-  front_shiny_female?: any;
-}
-
 export interface GenerationV {
-  'black-white': BlackWhite;
-}
-
-export interface OmegarubyAlphasapphire {
-  front_default: string;
-  front_female?: any;
-  front_shiny: string;
-  front_shiny_female?: any;
-}
-
-export interface XY {
-  front_default: string;
-  front_female?: any;
-  front_shiny: string;
-  front_shiny_female?: any;
+  'black-white': GameVersion;
 }
 
 export interface GenerationVi {
-  'omegaruby-alphasapphire': OmegarubyAlphasapphire;
-  'x-y': XY;
+  'omegaruby-alphasapphire': GameVersion;
+  'x-y': GameVersion;
 }
 
 export interface Icons {
@@ -193,16 +144,9 @@ export interface Icons {
   front_female?: any;
 }
 
-export interface UltraSunUltraMoon {
-  front_default: string;
-  front_female?: any;
-  front_shiny: string;
-  front_shiny_female?: any;
-}
-
 export interface GenerationVii {
   icons: Icons;
-  'ultra-sun-ultra-moon': UltraSunUltraMoon;
+  'ultra-sun-ultra-moon': GameVersion;
 }
 
 export interface GenerationViii {
