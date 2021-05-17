@@ -9,11 +9,12 @@ import { PipeModule } from '../../core/pipes/pipe.module';
 import { ButtonComponent } from './button/button.component';
 import { CardComponent } from './card/card.component';
 import { TableComponent } from './table/table.component';
+import { ObjectCellComponent } from './object-cell/object-cell.component';
 
 @NgModule({
   declarations: [ButtonComponent, CardComponent, TableComponent],
   imports: [CommonModule, DragDropModule, TranslateModule.forRoot(), FormsModule, PipeModule],
-  providers: [ButtonComponent, CardComponent, TableComponent],
+  providers: [ButtonComponent, CardComponent, TableComponent, ObjectCellComponent],
   exports: [ButtonComponent, CardComponent, TableComponent],
   bootstrap: [],
 })
