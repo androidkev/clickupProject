@@ -5,7 +5,7 @@ export interface Description {
   language: Language;
 }
 
-export interface RootObject {
+export interface MoveTarget {
   descriptions: Description[];
   id: number;
   moves: Resource[];

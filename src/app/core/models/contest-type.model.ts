@@ -6,7 +6,7 @@ export interface Name {
   name: string;
 }
 
-export interface RootObject {
+export interface ContestType {
   berry_flavor: Resource;
   id: number;
   name: string;

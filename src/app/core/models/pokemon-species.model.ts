@@ -27,7 +27,7 @@ export interface Variety {
   pokemon: Resource;
 }
 
-export interface RootObject {
+export interface PokemonSpecie {
   base_happiness: number;
   capture_rate: number;
   color: Resource;

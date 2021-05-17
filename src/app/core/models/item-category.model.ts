@@ -1,6 +1,6 @@
 import { Name, Resource } from './base.model';
 
-export interface RootObject {
+export interface ItemCategory {
   id: number;
   items: Resource[];
   name: string;
