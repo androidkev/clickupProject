@@ -1,58 +1,20 @@
-export interface Ability2 {
-  name: string;
-  url: string;
-}
+import { GameIndice, Resource } from './base.model';
 
 export interface Ability {
-  ability: Ability2;
+  ability: Resource;
   is_hidden: boolean;
   slot: number;
 }
 
-export interface Form {
-  name: string;
-  url: string;
-}
-
-export interface Version {
-  name: string;
-  url: string;
-}
-
-export interface GameIndice {
-  game_index: number;
-  version: Version;
-}
-
-export interface Move2 {
-  name: string;
-  url: string;
-}
-
-export interface MoveLearnMethod {
-  name: string;
-  url: string;
-}
-
-export interface VersionGroup {
-  name: string;
-  url: string;
-}
-
 export interface VersionGroupDetail {
   level_learned_at: number;
-  move_learn_method: MoveLearnMethod;
-  version_group: VersionGroup;
+  move_learn_method: Resource;
+  version_group: Resource;
 }
 
 export interface Move {
-  move: Move2;
+  move: Resource;
   version_group_details: VersionGroupDetail[];
-}
-
-export interface Species {
-  name: string;
-  url: string;
 }
 
 export interface DreamWorld {
@@ -140,43 +102,21 @@ export interface GenerationIii {
   'ruby-sapphire': RubySapphire;
 }
 
-export interface DiamondPearl {
-  back_default: string;
-  back_female?: any;
-  back_shiny: string;
-  back_shiny_female?: any;
+export interface GameVersion {
+  back_default?: string;
+  back_female?: string;
+  back_shiny?: string;
+  back_shiny_female?: string;
   front_default: string;
-  front_female?: any;
+  front_female?: string;
   front_shiny: string;
-  front_shiny_female?: any;
-}
-
-export interface HeartgoldSoulsilver {
-  back_default: string;
-  back_female?: any;
-  back_shiny: string;
-  back_shiny_female?: any;
-  front_default: string;
-  front_female?: any;
-  front_shiny: string;
-  front_shiny_female?: any;
-}
-
-export interface Platinum {
-  back_default: string;
-  back_female?: any;
-  back_shiny: string;
-  back_shiny_female?: any;
-  front_default: string;
-  front_female?: any;
-  front_shiny: string;
-  front_shiny_female?: any;
+  front_shiny_female?: string;
 }
 
 export interface GenerationIv {
-  'diamond-pearl': DiamondPearl;
-  'heartgold-soulsilver': HeartgoldSoulsilver;
-  platinum: Platinum;
+  'diamond-pearl': GameVersion;
+  'heartgold-soulsilver': GameVersion;
+  platinum: GameVersion;
 }
 
 export interface Animated {
@@ -190,39 +130,13 @@ export interface Animated {
   front_shiny_female?: any;
 }
 
-export interface BlackWhite {
-  animated: Animated;
-  back_default: string;
-  back_female?: any;
-  back_shiny: string;
-  back_shiny_female?: any;
-  front_default: string;
-  front_female?: any;
-  front_shiny: string;
-  front_shiny_female?: any;
-}
-
 export interface GenerationV {
-  'black-white': BlackWhite;
-}
-
-export interface OmegarubyAlphasapphire {
-  front_default: string;
-  front_female?: any;
-  front_shiny: string;
-  front_shiny_female?: any;
-}
-
-export interface XY {
-  front_default: string;
-  front_female?: any;
-  front_shiny: string;
-  front_shiny_female?: any;
+  'black-white': GameVersion;
 }
 
 export interface GenerationVi {
-  'omegaruby-alphasapphire': OmegarubyAlphasapphire;
-  'x-y': XY;
+  'omegaruby-alphasapphire': GameVersion;
+  'x-y': GameVersion;
 }
 
 export interface Icons {
@@ -230,25 +144,13 @@ export interface Icons {
   front_female?: any;
 }
 
-export interface UltraSunUltraMoon {
-  front_default: string;
-  front_female?: any;
-  front_shiny: string;
-  front_shiny_female?: any;
-}
-
 export interface GenerationVii {
   icons: Icons;
-  'ultra-sun-ultra-moon': UltraSunUltraMoon;
-}
-
-export interface Icons2 {
-  front_default: string;
-  front_female?: any;
+  'ultra-sun-ultra-moon': GameVersion;
 }
 
 export interface GenerationViii {
-  icons: Icons2;
+  icons: Icons;
 }
 
 export interface Versions {
@@ -275,31 +177,21 @@ export interface Sprites {
   versions: Versions;
 }
 
-export interface Stat2 {
-  name: string;
-  url: string;
-}
-
 export interface Stat {
   base_stat: number;
   effort: number;
-  stat: Stat2;
-}
-
-export interface Type2 {
-  name: string;
-  url: string;
+  stat: Resource;
 }
 
 export interface Type {
   slot: number;
-  type: Type2;
+  type: Resource;
 }
 
 export interface Pokemon {
   abilities: Ability[];
   base_experience: number;
-  forms: Form[];
+  forms: Resource[];
   game_indices: GameIndice[];
   height: number;
   held_items: any[];
@@ -310,7 +202,7 @@ export interface Pokemon {
   name: string;
   order: number;
   past_types: any[];
-  species: Species;
+  species: Resource;
   sprites: Sprites;
   stats: Stat[];
   types: Type[];
